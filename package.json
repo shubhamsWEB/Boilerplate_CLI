@@ -1,6 +1,6 @@
 {
   "name": "@shubham_17/boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A React Boilerplate",
   "main": "src/index.js",
   "bin": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shubhamsWEB/Boilerplate.git"
+    "url": "git+https://github.com/shubhamsWEB/Boilerplate_CLI.git"
   },
   "keywords": [
     "cli",
