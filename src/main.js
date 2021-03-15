@@ -2,6 +2,7 @@ import chalk from "chalk";
 import path from "path";
 import execa from "execa";
 import Listr from "listr";
+import chalkAnimation from 'chalk-animation';
 const { execSync, exec } = require("child_process");
 
 async function copyTemplateFiles(options) {
@@ -66,6 +67,7 @@ export async function createProject(options) {
     },
   ]);
   await tasks.run();
-  console.log("%s Project ready", chalk.green.bold("DONE"));
+  chalkAnimation.rainbow("Happy coding.. :)")
+  // console.log("%s Project ready", chalk.green.bold("DONE"));
   return true;
 }
