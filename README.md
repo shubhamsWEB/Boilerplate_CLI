@@ -4,7 +4,7 @@ Create a react app with no hustle bustle, no build config. Just run a command an
 ## Install
 
 ```sh
-npm i create-project -g
+npm i @shubham_17/boilerplate -g
 ```
 ## Initialize Project
 
@@ -12,7 +12,7 @@ npm i create-project -g
 create-project <projectName>
 ```
 
-## Project Structure
+<!-- ## Project Structure -->
 
 <!-- | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
