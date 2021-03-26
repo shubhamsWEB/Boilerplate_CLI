@@ -67,7 +67,7 @@ export async function createProject(options) {
     },
   ]);
   await tasks.run();
-  chalkAnimation.rainbow("Happy coding.. :)")
+  chalkAnimation.rainbow("Happy coding Fokes... :)")
   // console.log("%s Project ready", chalk.green.bold("DONE"));
   return true;
 }
