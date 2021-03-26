@@ -1,6 +1,6 @@
 {
   "name": "@shubham_17/boilerplate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A React Boilerplate",
   "main": "src/index.js",
   "bin": {
