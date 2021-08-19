@@ -2,12 +2,16 @@ import chalk from "chalk";
 import path from "path";
 import execa from "execa";
 import Listr from "listr";
-import chalkAnimation from 'chalk-animation';
+import chalkAnimation from "chalk-animation";
 const { execSync, exec } = require("child_process");
 
 async function copyTemplateFiles(options) {
   try {
-    return execSync("git clone https://github.com/shubhamsWEB/Boilerplate.git", {
+    var templateUrl =
+      options.template == "javascript"
+        ? "https://github.com/aryankush25/react-boilerplate"
+        : "https://github.com/aryankush25/react-boilerplate-typescript";
+    return execSync(`${templateUrl}`, {
       stdio: [0, 1, 2],
       cwd: path.resolve(options.targetDirectory, ""),
     });
@@ -67,7 +71,7 @@ export async function createProject(options) {
     },
   ]);
   await tasks.run();
-  chalkAnimation.rainbow("Happy coding Fokes... :)")
+  chalkAnimation.rainbow("Happy coding Fokes... :)");
   // console.log("%s Project ready", chalk.green.bold("DONE"));
   return true;
 }
