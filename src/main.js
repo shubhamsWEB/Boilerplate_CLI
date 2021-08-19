@@ -2,18 +2,26 @@ import chalk from "chalk";
 import path from "path";
 import execa from "execa";
 import Listr from "listr";
-import chalkAnimation from "chalk-animation";
+import chalkAnimation from 'chalk-animation';
+import fs from "fs";
 const { execSync, exec } = require("child_process");
 
 async function copyTemplateFiles(options) {
+  fs.mkdir(`./${options.targetDirectory}`, function(err) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log("New directory successfully created.")
+    }
+  })
   try {
     var templateUrl =
-      options.template == "javascript"
-        ? "https://github.com/aryankush25/react-boilerplate"
-        : "https://github.com/aryankush25/react-boilerplate-typescript";
-    return execSync(`${templateUrl}`, {
+    options.template == "javascript"
+      ? "https://github.com/aryankush25/react-boilerplate.git"
+      : "https://github.com/aryankush25/react-boilerplate-typescript.git";
+    return execSync(`git clone ${templateUrl} .`, {
       stdio: [0, 1, 2],
-      cwd: path.resolve(options.targetDirectory, ""),
+      cwd: path.resolve(`${options.targetDirectory}`),
     });
   } catch (err) {
     console.log(chalk.red.bold("Error in Cloning"));
@@ -72,6 +80,7 @@ export async function createProject(options) {
   ]);
   await tasks.run();
   chalkAnimation.rainbow("Happy coding Fokes... :)");
+  process.exit();
   // console.log("%s Project ready", chalk.green.bold("DONE"));
   return true;
 }

@@ -19,12 +19,13 @@ function parseArgumentIntoOptions(rawArgs) {
     return {
         skipPromts: args['--yes'] || false,
         git: args['--git'] || false,
-        template: args._[0],
+        template: args._[1],
+        targetDirectory: args._[0],
         runInstall : args['--install'] || false,
     };
 }
 async function promptMissingOptions(options) {
-    const defaultTemplate = 'JavaScript';
+    const defaultTemplate = 'javaScript';
     if(options.skipPromts) {
         return {
             ...options,
