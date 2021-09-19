@@ -5,6 +5,11 @@ import Listr from "listr";
 import chalkAnimation from 'chalk-animation';
 import fs from "fs";
 const { execSync, exec } = require("child_process");
+import { templates } from "./constants";
+
+function getTemplateUrl(name) {
+  return templates.filter(temp => temp.name === name).map(url => url.url);
+};
 
 async function copyTemplateFiles(options) {
   fs.mkdir(`./${options.targetDirectory}`, function(err) {
@@ -15,10 +20,8 @@ async function copyTemplateFiles(options) {
     }
   })
   try {
-    var templateUrl =
-    options.template == "javascript"
-      ? "https://github.com/aryankush25/react-boilerplate.git"
-      : "https://github.com/aryankush25/react-boilerplate-typescript.git";
+    var templateUrl = getTemplateUrl(options.template)[0];
+    
     return execSync(`git clone ${templateUrl} .`, {
       stdio: [0, 1, 2],
       cwd: path.resolve(`${options.targetDirectory}`),
