@@ -1,10 +1,10 @@
 {
-  "name": "@shubham_17/boilerplate",
+  "name": "awesome-boilerplates",
   "version": "1.0.7",
   "description": "A React Boilerplate",
   "main": "src/index.js",
   "bin": {
-    "@shubham_17/create-project": "bin/create-project",
+    "awesome-boilerplates": "bin/create-project",
     "create-project": "bin/create-project"
   },
   "publishConfig": {
@@ -25,7 +25,7 @@
     "Express",
     "Node"
   ],
-  "author": "Shubham Agrawal",
+  "author": "Shubham Agrawal <shubhama664@gmail.com> (https://shubhamsweb.netlify.app/)",
   "license": "ISC",
   "dependencies": {
     "arg": "^4.1.3",
