@@ -1,6 +1,6 @@
 {
   "name": "awesome-boilerplates",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A React Boilerplate",
   "main": "src/index.js",
   "bin": {
