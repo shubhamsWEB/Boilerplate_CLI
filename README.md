@@ -4,7 +4,7 @@ Create a react app with no hustle bustle, no build config. Just run a command an
 ## Install
 
 ```sh
-npm i npm i awesome-boilerplates -g
+npm i awesome-boilerplates -g
 ```
 ## Initialize Project
 
